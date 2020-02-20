@@ -1,0 +1,28 @@
+package com.y;
+
+//二分（折半）查找法
+public class Demo1 {
+	public static void main(String[] args) {
+		int[] s={60,65,70,75,80,85,90,95};
+		int x=60;//要查找的元素
+		int start=0;//开始位置
+		int end=s.length-1;//结束位置
+		int mid;//折半位置；
+		boolean flag=false;//是否找到（true是，false否）
+		do{
+			mid=(start+end)/2;
+			if(s[mid]==x){
+				System.out.println("找到了");
+				flag=true;
+				break;
+			}else if(s[mid]>x){
+				end=mid-1;
+			}else{
+				start=mid+1;
+			}
+		}while(start<=end);
+		if(!flag){
+			System.out.println("没找到");
+		}
+	}
+}
